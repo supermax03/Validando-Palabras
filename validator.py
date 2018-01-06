@@ -63,7 +63,7 @@ def transform(words, letters=[], index=0):
     return result
 
 
-def validate(sequence):
+def getvalidwords(sequence):
     result = []
     digit = sequence[0]
     letters = Directory.getLetters(digit)
@@ -73,9 +73,9 @@ def validate(sequence):
             words = transform(words, Directory.getLetters(sequence[index]), index)
         if len(words) > 0:
             result.append(words)
-    print result
+    return result
 
 
 if __name__ == '__main__':
     sequence = "8733"
-    validate(sequence)
+    print(getvalidwords(sequence))
